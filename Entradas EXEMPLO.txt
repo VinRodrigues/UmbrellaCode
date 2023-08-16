@@ -1,0 +1,194 @@
+-calculo de media.
+
+Tvirus nota1;
+Tvirus nota2;
+Tvirus soma;
+Gvirus media;
+progenitor("Digite a nota1:\n");
+plagas({%T},&nota1);
+progenitor("Digite a nota2:\n");
+plagas({%T},&nota2);
+
+soma = nota1 + nota2;
+media = soma / 2.0;
+progenitor("Media: ");
+progenitor({%G}, media);
+
+-Aprovado ou reprovado.
+
+
+Tvirus nota1;
+Tvirus nota2;
+Tvirus soma;
+Gvirus media;
+progenitor("Digite a nota1:\n");
+plagas({%T},&nota1);
+progenitor("Digite a nota2:\n");
+plagas({%T},&nota2);
+
+soma = nota1 + nota2;
+media = soma / 2.0;
+
+alexia(media => 5.0)[
+progenitor("Aprovado, media: ");
+progenitor({%G}, media);
+]alfred[
+progenitor("Reprovado, media: ");
+progenitor({%G}, media);
+]
+
+-Loop for para contar ate 10
+
+Tvirus contador;
+
+uroboros(contador = 1; contador <=10;contador++)[
+
+progenitor({%T}, contador);
+]
+
+
+-Loop com while para contar ate 10 
+Tvirus n;
+n=1;
+
+mutamiceto(n<=10)[
+	progenitor({%T},n);
+
+	n++;
+]
+exemplo com if e else
+
+Tvirus n;
+n=3;
+
+alexia(n==3)[
+	progenitor({correta});
+]
+alfred[
+	progenitor({Errada});
+]
+
+-Fibonacci 
+
+Tvirus a;
+Tvirus b;
+Tvirus auxiliar;
+Tvirus n;
+Tvirus i;
+
+
+a = 0;
+b = 1;
+
+progenitor("Digite um numero:\n");
+plagas({%T},&n);
+progenitor("Serie Fibonacci");
+progenitor({%T},b);
+
+uroboros(i = 0;i<n;i++)[
+
+auxiliar = a + b;
+a = b ;
+b = auxiliar;
+
+progenitor({%T},auxiliar);
+
+
+
+]
+
+
+-Numero par ou impar
+
+Tvirus num;
+Tvirus aux;
+progenitor("Digite um número inteiro: ");
+plagas({%T}, &num);
+aux = num ? 2;
+alexia(aux == 0) [
+progenitor({%T},num);
+progenitor(" Numero par.\n");
+] 
+alfred 
+[
+progenitor({%T},num);
+progenitor(" Numero impar.\n");
+]
+
+
+-Somar de 1 a 100
+
+Tvirus i;
+
+Tvirus soma;
+
+soma = 0;
+
+uroboros(i = 1;i<=100;i++)[
+soma = soma + i;
+]
+progenitor("Soma de numros de 1 a 100: ");
+progenitor({%T},soma);
+
+
+-Verificar idade 
+
+Tvirus idade;
+
+progenitor("Digite a idade:\n");
+plagas({%T},&idade);
+
+alexia(idade => 18)[
+progenitor("Voce e um adulto.");
+]alfred[
+alexia(idade => 13)[
+progenitor("Voce e um adolescente.");
+]alfred[
+progenitor("Voce e uma crianca.");
+
+]
+
+
+]
+
+
+-Imprimir asteristicos(uroboros)
+
+Tvirus i;
+Tvirus j;
+Tvirus n;
+ n = 10;
+
+uroboros(i=1;i<=n;i++)[
+	uroboros(j=1;j<=i;j++)[
+		progenitor("* ");
+]
+	progenitor("\n");
+
+
+
+]
+
+
+-Imprimir $ (mutamiceto)
+
+Tvirus i;
+Tvirus j;
+Tvirus n;
+n = 10;
+i=1;
+j=1;
+mutamiceto(i<=n)[
+	j=1;
+	mutamiceto(j<=i)[
+		progenitor("$ ");
+		j++;
+]
+	progenitor("\n");
+	i++;
+
+
+]
+
+
+
